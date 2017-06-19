@@ -83,11 +83,12 @@
 								</div>
 							</div></td>
 						</tr>
+						<tr><td></td><td><h2>Коментарии</h2></td></tr>
 						<tr>
-							<tr><td><h2>Коментарии</h2></td></tr>
+							
 							<td>
 
-								<div class="coments">
+								<div id="coments">
 										<span id="comentsName">Олег</span>
 										<p id='comentstext'>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -102,9 +103,9 @@
 							</td>
 							<td>
 								<form action="">
-									<input type="text">
-									<input type="submit" value="Отправить">
-									<textarea name="" id="" cols="30" rows="10"></textarea>
+									<input id="inputName" type="text">
+									<div  onclick=coments() value="Отправить">hhhhhhhhh</div>
+									<textarea name="" id="inputText" cols="30" rows="10"></textarea>
 								</form>
 							</td>
 						</tr>
@@ -270,11 +271,10 @@
 	    	mony:200,
 	    	text:". Одним из главных аспектов, влияющих на выбор пользователя, является описание товара, которое размещено на странице вашего интернет-магазина. Какой бы продукцией не торговал магазин, все его товары должны сопровождаться описаниями, так как интернет-магазин – это в первую очередь каталог, из которого покупатель ожидает получить всю необходимую информацию о товаре. Часто владельц"
 	    	}
-	    
-	  window.onpopstate = function(event) {
-		  console.log("location: " + location.href + ", state: " + JSON.stringify(event.state));
-		  
-		};
+	    	//Переменная для отправки имени  комента
+	    var inputName = "Oleg"
+	    var inputText = []
+	  
 
 
 		// добавить состояние истории
@@ -293,16 +293,19 @@
 	
 
 		function main (){
+			setTimeout(function(){render();},20)
 
 			history.pushState({page: 4}, "title 3", "?main=0");		
 			
 		}
 		function contact (){
+			setTimeout(function(){render();},20)
 			history.pushState({page: 5}, "contact", "?contact");
 		
 			
 		}
 		function product (id){
+			setTimeout(function(){render();},20)
 			history.pushState({page: 6}, "product", "?product");
 			
 			console.log(id)
@@ -316,17 +319,19 @@
 		
 		}
 		function products (){
+			setTimeout(function(){render();},20)
 			history.pushState({page: 7}, "products", "?products");
 			
 			
 		
 		}
 		function cart (){
+			setTimeout(function(){render();},20)
 			history.pushState({page: 8}, "cart", "?cart");
 			
 		
 		}
-		
+		console.log(window.history.state.page);
     //     cart:{
 				// 	h1:"Корзина",
 				// 	imgs:"none",
@@ -334,13 +339,34 @@
 				// 	p:"none",
 				// 	contact:"none",
 				// 	cart:"block"
-				// },
+				// },appendChild  
  		
 
 		
-// 
+		window.onpopstate = function(event) {
+			render();
+		  console.log(event);
+		  console.log("hhhhhhhhhhhhh");
+		  
+		};
+		window.addEventListener('replaceState', function(e) {
+		    console.log('THEY DID IT AGAIN!');
+		});
+		function coments (){
+			inputName ={
+				id:productImg.id,
+				name: document.getElementById('inputName').value ,
+				text:document.getElementById('inputText').value ,
+			}
+
+			var comentDiv = document.createElement('div');
+			var comentMain = document.getElementById("coments"); 
+			comentMain.appendChild(comentDiv);
+			inputText.push(inputName);
+			setTimeout(function(){console.log(inputText);},1000);
+		}	
 		// Изменение контента 
-		setInterval(function(){
+		function render ( ){
 				switch(history.state.page){
 			case 4:
 				off = pages.content.main
@@ -366,14 +392,16 @@
 				document.getElementById('p').style.display=off.p
 				document.getElementById('contact').style.display=off.contact
 				document.getElementById('cart').style.display=off.cart
-				//Product
+				//Product inputName
 				document.getElementById('Imgproduct').src=productImg.src;
 				document.getElementById('productext').innerHTML=productImg.text;
 				document.getElementById('productTitle').innerHTML=productImg.title;
 				document.getElementById('productBay').innerHTML="Купить "+productImg.mony+"";
 
+
+
 				
-		},20);
+		}
 
 		
 		console.log(document.getElementById('h1'))
