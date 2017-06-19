@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"/>
+
+
+  <head>
+    <title>Урок номер </title>
+	<link rel="stylesheet" href="build/bundle.css">
+  </head>
+	<body>
+		<table  class="header" border=1 cellpadding="20" cellspacing="0">
+			<tr>
+
+				<td>
+					<h1>Header</h1>
+				 </td>
+
+			
+
+			</tr>
+				<td class="tdmenu">
+						<div class="menu">
+							<ul><li><a onclick=main() >Главная</a></li><li><a onclick=contact() >Контакты</a></li><li><a onclick=products()>Товар</a></li><li><a onclick=cart()>Корзина</a></li><li><a href="#">Menu</a></li></ul>					
+						</div>
+				</td>
+
+
+			
+		</table>
+
+		<table border=1 class="content" cellpadding="20" cellspacing="0">
+			<tr>
+				<td class="left"></td>
+				<td class="center">
+				<h1 id="h1">Header</h1>
+					<p id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div id="contact"></div>
+				<div id="product"></div>
+				<div id="products"></div>
+				<div id="cart"></div>
+				</td>
+				<td class="right"></td>
+			</tr>			
+		</table>
+
+		
+		<form action=></form>
+
+
+	    <script type="text/javascript" src="build/bundle.js" ></script>
+	    <script >
+	    		var pages = {
+			content:{
+				main:{
+					h1:"Главная",
+					imgs:"none",
+					img:"none",
+					p:"block",
+					contact:"none",
+					cart:"none",
+				},
+				products:{
+					h1:"Товары",
+					imgs:"block",
+					img:"none",
+					p:"none",
+					contact:"none",
+					cart:"none",
+				},
+				product:{
+					h1:"Товар",
+					imgs:"none",
+					img:"block",
+					p:"none",
+					contact:"none",
+					cart:"none",
+
+				},
+				contact:{
+					h1:"Контакты",
+					imgs:"none",
+					img:"none",
+					p:"none",
+					contact:"block",
+					cart:"none",
+				},
+				cart:{
+					h1:"Корзина",
+					imgs:"none",
+					img:"none",
+					p:"none",
+					contact:"none",
+					cart:"block"
+				},
+
+
+			},
+
+		}
+	    var off = pages.content.main ;
+	    
+	  window.onpopstate = function(event) {
+		  console.log("location: " + location.href + ", state: " + JSON.stringify(event.state));
+		  
+		};
+
+
+		// добавить состояние истории
+		history.pushState({page: 1}, "title 1", "?page=1");
+		history.pushState({page: 2}, "title 2", "?page=2");
+
+
+		// заменить текущее состояние
+		// history.replaceState({page: 3}, "title 3", "?page=3");
+
+		// history.back(); // location: http://example.com/example.html?page=1, state: {"page":1}
+		// history.back(); // location: http://example.com/example.html, state: null
+		// history.go(2);  // location: http://example.com/example.html?page=3, state: {"page":3}
+
+		
+	
+
+		function main (){
+
+			history.pushState({page: 4}, "title 3", "?main=0");		
+			off = pages.content.main
+		}
+		function contact (){
+			history.pushState({page: 5}, "contact", "?contact");
+			off = pages.content.contact
+			
+		}
+		function product (){
+			history.pushState({page: 6}, "product", "?product");
+			off = pages.content.product
+		
+		}
+		function products (){
+			history.pushState({page: 7}, "products", "?products");
+			off = pages.content.products
+		
+		}
+		function cart (){
+			history.pushState({page: 8}, "cart", "?cart");
+			off = pages.content.cart
+		
+		}
+    //     cart:{
+				// 	h1:"Корзина",
+				// 	imgs:"none",
+				// 	img:"none",
+				// 	p:"none",
+				// 	contact:"none",
+				// 	cart:"block"
+				// },
+ 		
+
+		console.log(off)
+
+		// Изменение контента 
+		setInterval(function(){
+				document.getElementById('h1').innerHTML=off.h1;
+				document.getElementById('products').style.display=off.imgs
+				document.getElementById('p').style.display=off.p
+				document.getElementById('contact').style.display=off.contact
+				document.getElementById('cart').style.display=off.cart
+				
+		},1000);
+		
+		console.log(document.getElementById('h1'))
+		//переход между роутами
+
+
+	    </script>
+	</body>
+</html>
