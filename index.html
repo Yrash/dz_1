@@ -61,26 +61,35 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<div id="contact"></div>
-				<div id="product"></div>
+				<div id="product">
+					<table>
+						<tr>
+							<td><img id='Imgproduct' src="http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
+							<td><div class="text">
+								<p>Цена </p>
+							</div></td>
+						</tr>
+					</table>
+				</div>
 				<div id="products">
 					<table>
 						<tr>
-							<td><img id="img1" onclick=products(id) src="http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
-							<td><img id="img2" onclick=products(id) src="http://tel.by/uploads/posts/2011-10/1317850739_funny-wallpapers-240s320-4.jpg" alt="img"></td>
-							<td><img id="img3" onclick=products(id)  src="http://tel.by/uploads/posts/2011-10/1317850764_funny-wallpapers-240s320-6.jpg" alt="img"></td>
+							<td><img id="img1" onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
+							<td><img id="img2" onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850739_funny-wallpapers-240s320-4.jpg" alt="img"></td>
+							<td><img id="img3" onclick=product(id)  src="http://tel.by/uploads/posts/2011-10/1317850764_funny-wallpapers-240s320-6.jpg" alt="img"></td>
 							
 						</tr>
 
 						<tr>
-							<td><img id="img4"  onclick=products(id) src="http://tel.by/uploads/posts/2012-08/1344339360_cyberpank_240x320_513798.jpg" alt="img"></td>
-							<td><img id="img5"  onclick=products(id) src="http://tel.by/uploads/posts/2012-08/1344339362_funnybunny_240x320_512874.jpg" alt="img"></td>
-							<td><img id="img6"  onclick=products(id) src="http://tel.by/uploads/posts/2012-08/1344339343_helpme_240x320_515828.jpg" alt="img"></td>
+							<td><img id="img4"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339360_cyberpank_240x320_513798.jpg" alt="img"></td>
+							<td><img id="img5"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339362_funnybunny_240x320_512874.jpg" alt="img"></td>
+							<td><img id="img6"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339343_helpme_240x320_515828.jpg" alt="img"></td>
 							
 						</tr>
 						<tr>
-							<td><img id="img7"  onclick=products(id) src="http://tel.by/uploads/posts/2011-10/1317850811_funny-wallpapers-240s320-11.jpg" alt="img"></td>
-							<td><img id="img8"  onclick=products(id) src="http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg" alt="img"></td>
-							<td><img id="img9"  onclick=products(id) src="http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg" alt="img"></td>
+							<td><img id="img7"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850811_funny-wallpapers-240s320-11.jpg" alt="img"></td>
+							<td><img id="img8"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg" alt="img"></td>
+							<td><img id="img9"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg" alt="img"></td>
 							
 						</tr>
 
@@ -147,6 +156,62 @@
 
 		}
 	    var off = pages.content.main ;
+	    var productsImg = [
+	    	{
+	    	id:"img1",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img2",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850739_funny-wallpapers-240s320-4.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img3",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-6.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img4",
+	    	src:"http://tel.by/uploads/posts/2012-08/1344339360_cyberpank_240x320_513798.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img5",
+	    	src:"http://tel.by/uploads/posts/2012-08/1344339362_funnybunny_240x320_512874.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img6",
+	    	src:"http://tel.by/uploads/posts/2012-08/1344339343_helpme_240x320_515828.jpg" ,
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img7",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850811_funny-wallpapers-240s320-11.jpg" ,
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img8",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	{
+	    	id:"img9",
+	    	src:"http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg",
+	    	title:"Img_1",
+	    	mony:200
+	    	},
+	    	]
 	    var productImg = "http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg"
 	    
 	  window.onpopstate = function(event) {
@@ -173,29 +238,38 @@
 		function main (){
 
 			history.pushState({page: 4}, "title 3", "?main=0");		
-			off = pages.content.main
+			
 		}
 		function contact (){
 			history.pushState({page: 5}, "contact", "?contact");
-			off = pages.content.contact
+		
 			
 		}
-		function product (){
+		function product (id){
 			history.pushState({page: 6}, "product", "?product");
-			off = pages.content.product
+			
+			console.log(id)
+			var pageshh = productsImg.filter(function(hr){
+				return hr.id === id 
+			})
+			
+			if(id !== undefined){
+				 productImg = pageshh[0].src
+			}
 		
 		}
-		function products (id){
+		function products (){
 			history.pushState({page: 7}, "products", "?products");
-			off = pages.content.products
-			console.log(id)
+			
+			
 		
 		}
 		function cart (){
 			history.pushState({page: 8}, "cart", "?cart");
-			off = pages.content.cart
+			
 		
 		}
+		
     //     cart:{
 				// 	h1:"Корзина",
 				// 	imgs:"none",
@@ -207,14 +281,35 @@
  		
 
 		console.log(off)
-
+// 
 		// Изменение контента 
 		setInterval(function(){
+				switch(history.state.page){
+			case 4:
+				off = pages.content.main
+			break ;
+			case 5:
+				off = pages.content.contact
+			break ;
+			case 6:
+				off = pages.content.product
+			break ;
+			case 7:
+				off = pages.content.products
+			break;
+			case 8:
+				off = pages.content.cart
+			break;
+
+
+		}
 				document.getElementById('h1').innerHTML=off.h1;
 				document.getElementById('products').style.display=off.imgs
+				document.getElementById('product').style.display=off.img
 				document.getElementById('p').style.display=off.p
 				document.getElementById('contact').style.display=off.contact
 				document.getElementById('cart').style.display=off.cart
+				document.getElementById('Imgproduct').src=productImg;
 				
 		},1000);
 		
