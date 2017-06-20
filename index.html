@@ -89,23 +89,14 @@
 							<td>
 
 								<div id="coments">
-										<span id="comentsName">Олег</span>
-										<p id='comentstext'>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-											consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.											
-										
-										</p>
+									
 								</div>
 							</td>
 							<td>
 								<form action="">
-									<input id="inputName" type="text">
-									<div  onclick=coments() value="Отправить">hhhhhhhhh</div>
-									<textarea name="" id="inputText" cols="30" rows="10"></textarea>
+									<input pattern="выражение" id="inputName" type="text">
+									<div  pattern="выражение"onclick=coments() value="Отправить">hhhhhhhhh</div>
+									<textarea pattern="выражение" name="" id="inputText" cols="30" rows="10"></textarea>
 								</form>
 							</td>
 						</tr>
@@ -274,6 +265,8 @@
 	    	//Переменная для отправки имени  комента
 	    var inputName = "Oleg"
 	    var inputText = []
+	    var id = 0;
+	  
 	  
 
 
@@ -293,20 +286,21 @@
 	
 
 		function main (){
-			setTimeout(function(){render();},20)
+			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
 
 			history.pushState({page: 4}, "title 3", "?main=0");		
 			
 		}
 		function contact (){
-			setTimeout(function(){render();},20)
+			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
 			history.pushState({page: 5}, "contact", "?contact");
 		
 			
 		}
 		function product (id){
-			setTimeout(function(){render();},20)
+			setTimeout(function(){render(); comentsCreate (window.history.state.page) ;},20)
 			history.pushState({page: 6}, "product", "?product");
+
 			
 			console.log(id)
 			var pageshh = productsImg.filter(function(hr){
@@ -319,14 +313,14 @@
 		
 		}
 		function products (){
-			setTimeout(function(){render();},20)
+			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
 			history.pushState({page: 7}, "products", "?products");
 			
 			
 		
 		}
 		function cart (){
-			setTimeout(function(){render();},20)
+			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
 			history.pushState({page: 8}, "cart", "?cart");
 			
 		
@@ -345,27 +339,110 @@
 		 document.addEventListener("DOMContentLoaded", render);
 		window.onpopstate = function(event) {
 			render();
-		  console.log(event);
-		  console.log("hhhhhhhhhhhhh");
-		  
+		  		  
 		};
-		window.addEventListener('replaceState', function(e) {
-		    console.log('THEY DID IT AGAIN!');
-		});
+		
 		function coments (){
+			id = id + 1
 			inputName ={
-				id:productImg.id,
+				id: id,
+				idImg:productImg.id,
 				name: document.getElementById('inputName').value ,
 				text:document.getElementById('inputText').value ,
 			}
-
-			var comentDiv = document.createElement('div');
-			var comentMain = document.getElementById("coments"); 
-			comentMain.appendChild(comentDiv);
+			setTimeout(function(){render(); comentsCreate (window.history.state.page ) ;},20)
 			inputText.push(inputName);
-			setTimeout(function(){console.log(inputText);},1000);
+
+			
+
+
+
+			
 		}	
 		// Изменение контента 
+
+		function comentsCreate (history){
+			//Создание елементов 
+			
+			function Create (object){		
+
+				var comentDiv = document.createElement('div');
+				var comentP = document.createElement('p')
+				var comentSpan = document.createElement('span')
+				var comentMain = document.getElementById("coments"); 
+
+				// Вложеность елементов
+
+				comentDiv.appendChild(comentSpan);
+				comentDiv.insertBefore(comentP,comentDiv.firstChild);			
+				comentMain.appendChild(comentDiv);
+				//Фильтр по картинкам
+				comentDiv.id = object.id;
+				comentDiv.className= "comentsViev";
+				comentSpan.innerHTML = object.text
+
+				comentP.innerHTML = object.name
+
+			}
+			function dell (){
+				var Null = []
+				var comentMain = document.getElementById("coments"); 
+				for(var i = 0; i <(inputText.length +1); i++){
+						var el = document.getElementById(""+ i +"")
+						console.log(el)
+						if(el !== null){
+							Null.push(i)
+						}
+						// comentMain.removeChild(el)
+
+				}
+				Null.map(function(nuumber){
+					var el = document.getElementById(""+ nuumber +"")
+					comentMain.removeChild(el)
+
+
+				})
+				console.log(Null)
+			}
+
+
+			
+			var filterComents = inputText.filter(function(object){
+				return object.idImg === productImg.id
+			});
+
+			
+
+			
+
+			switch(history){
+				case 7 :
+					dell()
+				break;
+				case 6 :
+					setTimeout(dell(),25);
+					
+					setTimeout(function(){				
+							filterComents.map(function(object){			
+							
+							return  Create(object)				           
+						});
+					},48);
+
+				break;
+				
+				case 5 :
+					dell()
+				break;
+				case 4 :
+					dell()
+				break;
+			}
+
+			console.log(history)
+
+
+		}  
 		function render ( ){
 				switch(history.state.page){
 			case 4:
