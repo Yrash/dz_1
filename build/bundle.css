@@ -6,7 +6,7 @@
 }
 .center{
 	width:60%;
-	text-align: center;	
+	
 }
 .content{
 	width:100%;
@@ -65,4 +65,54 @@ ul,li,a{
 	border:0.7px solid #464141;
 	box-shadow:inset 0px 0px 20px 10px black;
 
+}
+.footer{
+	width: 100%;
+	padding: 20px;
+	border-spacing: 0px;
+    border: 2px solid gray;
+}
+.footer td{
+	width: 25%;
+	text-align: center;
+}
+#Imgproduct{
+	    box-shadow: 0px 1px 10px -2px black;
+
+} 
+
+.comentsViev{
+	position: relative;
+	width:100%;
+	min-width:230px;
+	min-height:200px;
+	background-color: rgba(10,10,10, 0.4);
+	border-radius:3px;
+	box-shadow: 0px 0px 10px -2px grey;
+	margin:5px;
+}
+#coments{
+	
+}
+.comentsViev::after{
+	content:"";
+	height:0px;
+}
+.comentsViev p {
+	margin:0px;
+	
+	font-family: Arial;
+	font-size: 20px; 
+	
+	color:white;
+}
+.comentsViev span {
+	
+	margin:0px;
+	
+	text-align: left;
+}
+
+td{
+	padding: 20px;
 }
