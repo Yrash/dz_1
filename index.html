@@ -20,7 +20,7 @@
 			</tr>
 				<td class="tdmenu">
 						<div class="menu">
-							<ul><li><a onclick=main() >Главная</a></li><li><a onclick=contact() >Контакты</a></li><li><a onclick=products()>Товар</a></li><li><a onclick=cart()>Корзина</a></li><li><a href="#">Menu</a></li></ul>					
+							<ul><li><a onclick=main() >Главная</a></li><li><a onclick=contact() >Контакты</a></li><li><a onclick=products()>Товар</a></li><li><a onclick=cart()>Корзина</a></li><li><a onclick=pegistration()>Регстрация</a></li></ul>					
 						</div>
 				</td>
 
@@ -67,7 +67,7 @@
 							<h3 id="productTitle">Title</h3>
 						</tr>
 						<tr>
-							<td><img id='Imgproduct' src="http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
+							<td><img id='Imgproduct' src="build/img/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
 							<td><div class="text">
 								<p id="productext">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -92,11 +92,13 @@
 									
 								</div>
 							</td>
-							<td>
-								<form action="">
-									<input pattern="выражение" id="inputName" type="text">
-									<div  pattern="выражение"onclick=coments() value="Отправить">hhhhhhhhh</div>
-									<textarea pattern="выражение" name="" id="inputText" cols="30" rows="10"></textarea>
+							<td class="formTd">
+
+								<form onSubmit="return false;" name="comentsform" id="comentForm" metod='post'>
+									<input onSubmit="return false;" required minlength="4" maxlength="10" id="inputName"    type="text">
+									<input id="color" value="#b2905b" type="color">
+									<input onclick="coments()" onSubmit="return false;" type="submit">
+									<textarea pattern="выражение" name="" id="inputText" required cols="30" rows="10"></textarea>
 								</form>
 							</td>
 						</tr>
@@ -105,28 +107,66 @@
 				<div id="products">
 					<table>
 						<tr>
-							<td><img id="img1" onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
-							<td><img id="img2" onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850739_funny-wallpapers-240s320-4.jpg" alt="img"></td>
-							<td><img id="img3" onclick=product(id)  src="http://tel.by/uploads/posts/2011-10/1317850764_funny-wallpapers-240s320-6.jpg" alt="img"></td>
+							<td><img id="img1" onclick=product(id) src="build/img/1317850723_funny-wallpapers-240s320-1.jpg" alt="img"></td>
+							<td><img id="img2" onclick=product(id) src="build/img/1317850739_funny-wallpapers-240s320-4.jpg" alt="img"></td>
+							<td><img id="img3" onclick=product(id)  src="build/img/1317850764_funny-wallpapers-240s320-6.jpg" alt="img"></td>
 							
 						</tr>
 
 						<tr>
-							<td><img id="img4"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339360_cyberpank_240x320_513798.jpg" alt="img"></td>
-							<td><img id="img5"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339362_funnybunny_240x320_512874.jpg" alt="img"></td>
-							<td><img id="img6"  onclick=product(id) src="http://tel.by/uploads/posts/2012-08/1344339343_helpme_240x320_515828.jpg" alt="img"></td>
+							<td><img id="img4"  onclick=product(id) src="build/img/1344339360_cyberpank_240x320_513798.jpg" alt="img"></td>
+							<td><img id="img5"  onclick=product(id) src="build/img/1344339362_funnybunny_240x320_512874.jpg" alt="img"></td>
+							<td><img id="img6"  onclick=product(id) src="build/img/1344339343_helpme_240x320_515828.jpg" alt="img"></td>
 							
 						</tr>
 						<tr>
-							<td><img id="img7"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850811_funny-wallpapers-240s320-11.jpg" alt="img"></td>
-							<td><img id="img8"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg" alt="img"></td>
-							<td><img id="img9"  onclick=product(id) src="http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg" alt="img"></td>
+							<td><img id="img7"  onclick=product(id) src="build/img/1317850811_funny-wallpapers-240s320-11.jpg" alt="img"></td>
+							<td><img id="img8"  onclick=product(id) src="build/img/1317850809_funny-wallpapers-240s320.jpg" alt="img"></td>
+							<td><img id="img9"  onclick=product(id) src="build/img/1317850751_funny-wallpapers-240s320-14.jpg" alt="img"></td>
 							
 						</tr>
 
 					</table>
 				</div>
 				<div id="cart"></div>
+				<div id="registration">
+					
+					<form onSubmit="return false;" name="comentsform" id="registrationForm" metod='post'>
+							<label>Имя  <br>
+								<input onSubmit="return false;" required minlength="4" maxlength="10"   type="text"> 
+							</label>  <br> <br>	
+							<label>Фамилия <br>
+								<input onSubmit="return false;" required minlength="4" maxlength="10"   type="text"> 
+							</label> <br> <br>	
+							 <label>Емейл <br>
+								<input onSubmit="return false;" required minlength="4" maxlength="10"   type="email"> 
+							</label> <br> <br>	
+							<label> Год рождения  <br>
+								 <input type="date"> 
+							</label> <br> <br>	
+							<label> Пол  <br>								<label>
+								      Male
+								      <input name="gender" value="male" type="radio">
+								</label>
+								<label>
+								      Female
+								      <input name="gender" type="radio">
+							    </label>
+							</label> <br> <br>	
+							<label >Аватарка <br>
+								<input type="file">
+							</label>	<br> <br>     
+								 
+							 <label>Пароль <br>
+								<input onSubmit="return false;" required minlength="4" maxlength="10"   type="password"> </label> <br> <br>	
+							 <label>Пароль(повтор)  <br>
+								<input onSubmit="return false;" required minlength="4" maxlength="10"   type="password"> </label> <br> <br>	
+							 <br>
+								<input  onSubmit="return false;" type="submit">
+									
+					</form>
+
+				</div>
 				</td>
 				<td class="right"></td>
 			</tr>			
@@ -150,6 +190,7 @@
 					p:"block",
 					contact:"none",
 					cart:"none",
+					pegistration:'none',
 				},
 				products:{
 					h1:"Товары",
@@ -158,6 +199,8 @@
 					p:"none",
 					contact:"none",
 					cart:"none",
+					pegistration:'none',
+
 				},
 				product:{
 					h1:"Товар",
@@ -166,6 +209,7 @@
 					p:"none",
 					contact:"none",
 					cart:"none",
+					pegistration:'none'
 
 				},
 				contact:{
@@ -175,6 +219,7 @@
 					p:"none",
 					contact:"block",
 					cart:"none",
+					pegistration:'none'
 				},
 				cart:{
 					h1:"Корзина",
@@ -182,8 +227,18 @@
 					img:"none",
 					p:"none",
 					contact:"none",
-					cart:"block"
+					cart:"block",
+					pegistration:'none'
 				},
+				pegistration:{
+					h1:'Регистрация',
+					imgs:'none',
+					img:"none",
+					p:"none",
+					contact:"none",
+					cart:"none",
+					pegistration:'block'
+				}
 
 
 			},
@@ -193,63 +248,63 @@
 	    var productsImg = [
 	    	{
 	    	id:"img1",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850723_funny-wallpapers-240s320-1.jpg",
+	    	src:"build/img/1317850723_funny-wallpapers-240s320-1.jpg",
 	    	title:"Котяра",
 	    	mony:200,
 	    	text:". Одним из главных аспектов, влияющих на выбор пользователя, является описание товара, которое размещено на странице вашего интернет-магазина. Какой бы продукцией не торговал магазин, все его товары должны сопровождаться описаниями, так как интернет-магазин – это в первую очередь каталог, из которого покупатель ожидает получить всю необходимую информацию о товаре. Часто владельц"
 	    	},
 	    	{
 	    	id:"img2",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850739_funny-wallpapers-240s320-4.jpg",
+	    	src:"build/img/1317850739_funny-wallpapers-240s320-4.jpg",
 	    	title:"Обезяна",
 	    	mony:220,
 	    	text:"елем. Одним из главных аспектов, влияющих на выбор пользователя, является описание товара, которое размещено на странице вашего интернет-магазина. Какой бы продукцией не торговал магазин, все его товары должны сопровождаться описаниями, так как интернет-магазин – это в первую очередь каталог, из которого покупатель ожидает получить всю "
 	    	},
 	    	{
 	    	id:"img3",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850764_funny-wallpapers-240s320-6.jpg",
+	    	src:"build/img/1317850764_funny-wallpapers-240s320-6.jpg" ,
 	    	title:"Давай вперед",
 	    	mony:240,
 	    	text:"ь важно, чтобы оно было хорошо составлено, ведь только так удастся удержать внимание пользователя. К тому же, качественное описание способно подсознательно убедить вашего посетителя, что покупку ему следует сделать именно в вашем магазине."
 	    	},
 	    	{
 	    	id:"img4",
-	    	src:"http://tel.by/uploads/posts/2012-08/1344339360_cyberpank_240x320_513798.jpg",
+	    	src:"build/img/1344339360_cyberpank_240x320_513798.jpg",
 	    	title:"Космо",
 	    	mony:234,
 	    	text:"первую очередь каталог, из которого покупатель ожидает получить всю необходимую информацию о товаре. Часто владельцы таких магазинов акцентируют свое внимание на размещении в каталоге качественных фото. Конечно, изображения товара очень важны. Кроме того, они в первую очередь привлекают внимание посетителей. Тем не менее, на следующем этапе нахождени",
 	    	},
 	    	{
 	    	id:"img5",
-	    	src:"http://tel.by/uploads/posts/2012-08/1344339362_funnybunny_240x320_512874.jpg",
+	    	src:"build/img/1344339362_funnybunny_240x320_512874.jpg",
 	    	title:"Img_1",
 	    	mony:223,
 	    	text:"Очень важную роль играет описание и для поисковых машин. Данный элемент позволяет поисковикам выстраивать сайты магазинов в определенном порядке в поисковой выдаче в соответствии с запросом пользователя. И каждый интернет-магазин, естественно, желает оказаться на самой верхушке списка этой выдачи."
 	    	},
 	    	{
 	    	id:"img6",
-	    	src:"http://tel.by/uploads/posts/2012-08/1344339343_helpme_240x320_515828.jpg" ,
+	    	src:"build/img/1344339343_helpme_240x320_515828.jpg" ,
 	    	title:"Зая",
 	    	mony:256,
 	    	text:"Учитывайте возраст аудитории и если вы пишете для детского сайта, то в описаниях товаров делайте акцент на безопасности. Описывая мужской товар, подчеркните его надежность и дайте точные характеристики, а вот для женщин уделите больше внимания внешнему виду продукта и эмоциям, которые он вызывает. Хорошо зная свою аудиторию и ее потребности, вы понимаете, чем ее мотивировать, а значит каким до"
 	    	},
 	    	{
 	    	id:"img7",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850811_funny-wallpapers-240s320-11.jpg" ,
+	    	src:"build/img/1317850811_funny-wallpapers-240s320-11.jpg" ,
 	    	title:"Кроля",
 	    	mony:222,
 	    	text:"Составляя подробное описание продукта, особенно если оно техническое, не следует сильно вдаваться в подробности и ожидать, что клиент поймет все технические нюансы. Объясняйте терминологию не с научной, а с точки зрения выгоды. К примеру, если вы продаете футболки из сверхнового материала, не стоит в деталях расписывать структуру волокон и процесс получения ткани. Лучше расскажите, что в такой футболке тело дышит, ткань устойчива к износу и т.д. Все детали нужно писать максимально понятным для клиента языком. Не нужно заставлять его "
 	    	},
 	    	{
 	    	id:"img8",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850809_funny-wallpapers-240s320.jpg",
+	    	src:"build/img/1317850809_funny-wallpapers-240s320.jpg",
 	    	title:"Песик",
 	    	text:"Очень часто ассортимент большого интернет-магазина предусматривает товары для разных групп потребителей и всевозможных сфер применения. Тем не менее, не стоит забывать, что это целостная торговая площадка и весь контент на ней должен отличаться высоким качеством. Не имеет значения, продаете вы телевизор или велосипед, если вы представляете",
 	    	mony:213
 	    	},
 	    	{
 	    	id:"img9",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg",
+	    	src:"build/img/1317850751_funny-wallpapers-240s320-14.jpg",
 	    	title:"Овчарка",
 	    	mony:200,
 	    	text:"каким брендом они будут ассоциироваться у читателя. К примеру, если у вас интернет-магазин по продаже молодежной одежды, то здесь можно использовать свободный фамильярный стиль изложения. Если же вы продаете продукцию известного бренда, к примеру, дорогие авто, то лучше придерживаться его стиля и пользовать"
@@ -257,7 +312,7 @@
 	    	]
 	    var productImg = {
 	    	id:"img9",
-	    	src:"http://tel.by/uploads/posts/2011-10/1317850751_funny-wallpapers-240s320-14.jpg",
+	    	src:"build/img/1317850751_funny-wallpapers-240s320-14.jpg",
 	    	title:"Овчарка",
 	    	mony:200,
 	    	text:". Одним из главных аспектов, влияющих на выбор пользователя, является описание товара, которое размещено на странице вашего интернет-магазина. Какой бы продукцией не торговал магазин, все его товары должны сопровождаться описаниями, так как интернет-магазин – это в первую очередь каталог, из которого покупатель ожидает получить всю необходимую информацию о товаре. Часто владельц"
@@ -325,39 +380,45 @@
 			
 		
 		}
+		function pegistration (){
+			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
+			history.pushState({page: 9}, "registration", "?registration");
+			
+		}
 		console.log(window.history.state.page);
-    //     cart:{
-				// 	h1:"Корзина",
-				// 	imgs:"none",
-				// 	img:"none",
-				// 	p:"none",
-				// 	contact:"none",
-				// 	cart:"block"
-				// },appendChild  
- 		
 
-		 document.addEventListener("DOMContentLoaded", render);
+
+		document.addEventListener("DOMContentLoaded", render);
 		window.onpopstate = function(event) {
 			render();
 		  		  
 		};
 		
 		function coments (){
-			id = id + 1
-			inputName ={
-				id: id,
-				idImg:productImg.id,
-				name: document.getElementById('inputName').value ,
-				text:document.getElementById('inputText').value ,
+			var name = document.getElementById('inputName').value ;
+			var text = document.getElementById('inputText').value ;
+			var color =document.getElementById('color').value
+			
+
+			if(name.replace(/\s+/g,'') !== "" && text.replace(/\s+/g,'') !== ""){
+					
+						id = id + 1
+						inputName ={
+							id: id,
+							idImg:productImg.id,
+							name: name ,
+							text:text,
+							color:color,
+						}
+						setTimeout(function(){render(); comentsCreate (window.history.state.page );  document.getElementById("comentForm").reset();},20)
+						inputText.push(inputName);	
+			}else{
+						alert("Вы не ввели имя и ткст")
+
 			}
-			setTimeout(function(){render(); comentsCreate (window.history.state.page ) ;},20)
-			inputText.push(inputName);
-
 			
-
-
-
 			
+				
 		}	
 		// Изменение контента 
 
@@ -379,6 +440,8 @@
 				//Фильтр по картинкам
 				comentDiv.id = object.id;
 				comentDiv.className= "comentsViev";
+				comentDiv.style.backgroundColor = object.color;
+				// comentDiv.style.b
 				comentSpan.innerHTML = object.text
 
 				comentP.innerHTML = object.name
@@ -439,10 +502,11 @@
 				break;
 			}
 
-			console.log(history)
+			
 
 
-		}  
+		} 
+
 		function render ( ){
 				switch(history.state.page){
 			case 4:
@@ -460,8 +524,9 @@
 			case 8:
 				off = pages.content.cart
 			break;
-
-//
+			case 9:
+				off = pages.content.pegistration
+			break;
 		}
 				document.getElementById('h1').innerHTML=off.h1;
 				document.getElementById('products').style.display=off.imgs
@@ -469,11 +534,13 @@
 				document.getElementById('p').style.display=off.p
 				document.getElementById('contact').style.display=off.contact
 				document.getElementById('cart').style.display=off.cart
+				document.getElementById('registration').style.display=off.pegistration
 				//Product inputName
 				document.getElementById('Imgproduct').src=productImg.src;
 				document.getElementById('productext').innerHTML=productImg.text;
 				document.getElementById('productTitle').innerHTML=productImg.title;
 				document.getElementById('productBay').innerHTML="Купить "+productImg.mony+"";
+
 
 
 
