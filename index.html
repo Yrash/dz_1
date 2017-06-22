@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="build/bundle.css">
   </head>
 	<body onmousemove="animated(event)">
-		<table  class="header" border=1 cellpadding="20" cellspacing="0">
+		<table  class="header" cellpadding="20" cellspacing="0">
 			<tr>
 
 				<td>
@@ -28,10 +28,10 @@
 			
 		</table>
 
-		<table border=1 class="content" cellpadding="20" cellspacing="0">
+		<table  class="content" cellpadding="20" cellspacing="0">
 			<tr>
 				<td class="left"></td>
-				<td >
+				<td class="tdCenter">
 					<h1 id="h1">Header</h1>
 					<div class="center">
 						<table id="moveCenter"  class='moveCenter'>
@@ -175,11 +175,11 @@
 													 <input type="date"> 
 												</label> <br> <br>	
 												<label> Пол  <br>								<label>
-													      Male
+													      Жен
 													      <input name="gender" value="male" type="radio">
 													</label>
 													<label>
-													      Female
+													      Муж
 													      <input name="gender" type="radio">
 												    </label>
 												</label> <br> <br>	
@@ -298,7 +298,7 @@
 	    	{
 	    	id:"img3",
 	    	src:"build/img/1317850764_funny-wallpapers-240s320-6.jpg" ,
-	    	title:"Давай вперед",
+	    	title:"Делай",
 	    	mony:240,
 	    	text:"ь важно, чтобы оно было хорошо составлено, ведь только так удастся удержать внимание пользователя. К тому же, качественное описание способно подсознательно убедить вашего посетителя, что покупку ему следует сделать именно в вашем магазине."
 	    	},
@@ -608,15 +608,20 @@
 				if(animation){
 
 					document.getElementById('moveCenter').style.transform = 'rotateY(5deg)'
+					document.getElementById('h1').className = 'h1Tr'
 
 
 					setTimeout(function(){
 						document.getElementById('moveCenter').style.transform = 'rotateY(0deg)'
+
+						document.getElementById('h1').className = 'h1'
 					},1000);
 				}else{
 					document.getElementById('moveCenter').style.transform = 'rotateY(-5deg)'
+					document.getElementById('h1').className = 'h1Tr'
 					setTimeout(function(){
 						document.getElementById('moveCenter').style.transform = 'rotateY(0deg)'
+						document.getElementById('h1').className = 'h1'
 					},1000);
 
 				}
