@@ -12,8 +12,26 @@
 			<tr>
 
 				<td>
-					<h1>Header</h1>
-				 </td>
+					<table>
+						<tr>
+							<td>
+								<img width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5F7XbkNw4PT5XMu0v0VIt_Pd9nq6Ebp5MjLgdwXib3ve1JYFUgA" alt="">
+							</td>
+							<td width="80%" >
+								<h1>Header</h1>
+							</td>
+							 <td>
+							 	 <select>
+								      <option value="0">Выбор языка</option>
+								      <option value="UKR">Ukr</option>
+								      <option value="ENG">Eng</option>
+							    </select>
+							 </td>
+						</tr>
+					</table>
+				</td>
+				 
+				
 
 			
 
@@ -588,7 +606,7 @@
 				
 			break;
 		}
-				document.getElementById('h1').innerHTML=off.h1;
+				
 				// document.getElementById('products').style.display=off.imgs
 				// document.getElementById('product').style.display=off.img
 				// document.getElementById('p').style.display=off.p
@@ -615,6 +633,7 @@
 						document.getElementById('moveCenter').style.transform = 'rotateY(0deg)'
 
 						document.getElementById('h1').className = 'h1'
+						document.getElementById('h1').innerHTML=off.h1;
 					},1000);
 				}else{
 					document.getElementById('moveCenter').style.transform = 'rotateY(-5deg)'
@@ -622,6 +641,7 @@
 					setTimeout(function(){
 						document.getElementById('moveCenter').style.transform = 'rotateY(0deg)'
 						document.getElementById('h1').className = 'h1'
+						document.getElementById('h1').innerHTML=off.h1;
 					},1000);
 
 				}
