@@ -95,61 +95,111 @@ ul,li,a{
 #p{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 }
 #h1{
-	position: absolute;
-	transition: 0.4s all ease-in-out;
-	top: 0px;
+
+	transition: 1s all ease-in-out;
+	width: 200px;
+	
+
+}
+#h1Tr{
+
+	transition: 1s all ease-in-out;
+	transform:rotateY(360deg);
+	
+
+}
+.h1{
+
+	transition: 1s all ease-in-out;
+	width: 200px;
+	transform:rotateY(0deg);
+	
+
+}
+.h1Tr{
+
+	transition: 1s all ease-in-out;
+	transform:rotateY(700deg);
+	
 
 }
 
 #products{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 
 }
 #product{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 
 }
 #cart{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 
 }
 #contact{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 
 }
 #registration{
 	transition: 0.4s all ease-in-out;
 	width:730px;
+	min-width:730px;
+	vertical-align: top;
+	padding: 0px;
+	margin:0px;
 	
 
+}
+.tdCenter{
+	box-shadow: 0px 1px 10px -2px black;
 }
 .center{
 	transition: 0.8s all ease-in-out;
 	position: relative;
-	width:729px;
+	width:731px;
 	max-width:730px;
 	height:1200px;
 	overflow: hidden;
 	perspective:1000px;
-	box-shadow: 0px 1px 10px -2px black;
+
 }
 .moveCenter{
 	transition: 0.8s all ease-in-out;
 	position: absolute;
 	top: 50px;
 	left:0px;	
-	display: flex;
+	width: 4000px;
 }
 
 .comentsViev::after{
