@@ -119,14 +119,14 @@ ul,li,a{
 
 	transition: 1s all ease-in-out;
 	width: 200px;
-	transform:rotateY(0deg);
+	transform:rotate(0deg);
 	
 
 }
 .h1Tr{
 
 	transition: 1s all ease-in-out;
-	transform:rotateY(700deg);
+	transform:rotate(25deg);
 	
 
 }
