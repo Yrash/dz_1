@@ -7,7 +7,7 @@
     <title>Урок номер </title>
 	<link rel="stylesheet" href="build/bundle.css">
   </head>
-	<body>
+	<body onmousemove="animated(event)">
 		<table  class="header" border=1 cellpadding="20" cellspacing="0">
 			<tr>
 
@@ -19,7 +19,7 @@
 
 			</tr>
 				<td class="tdmenu">
-						<div class="menu">
+						<div  class="menu">
 							<ul><li><a onclick=main() >Главная</a></li><li><a onclick=contact() >Контакты</a></li><li><a onclick=products()>Товар</a></li><li><a onclick=cart()>Корзина</a></li><li><a onclick=pegistration()>Регстрация</a></li></ul>					
 						</div>
 				</td>
@@ -329,6 +329,7 @@
 	    var inputName = "Oleg"
 	    var inputText = []
 	    var id = 0;
+	    var animation = true;
 	  
 	  
 
@@ -345,9 +346,17 @@
 		// history.back(); // location: http://example.com/example.html, state: null
 		// history.go(2);  // location: http://example.com/example.html?page=3, state: {"page":3}
 
-		
 	
-
+	
+		function animated(event){
+			
+			if(event.clientX > 600 ){ 
+				 animation = true;
+			}else{ 
+				animation = false;
+			}
+			
+		}
 		function main (){
 			setTimeout(function(){render();comentsCreate (window.history.state.page)},20)
 
@@ -517,38 +526,38 @@
 
 		function render ( ){
 			var z = pages.content.main.p
-			var animation = true ;
+			
 				switch(history.state.page){
 			case 4:
 				off = pages.content.main
 				z = pages.content.main.p
-				animation = true ;
+				
 			break ;
 			case 5:
 				off = pages.content.contact
 				z = pages.content.contact.contact
-				animation = true ;
+				
 			break ;
 			case 6:
 				off = pages.content.product
 				z = pages.content.product.img
-				animation = true ;
+				
 			break ;
 			case 7:
 				off = pages.content.products
 				z = pages.content.products.imgs
-				animation = false ;
+			
 			break;
 			case 8:
 				off = pages.content.cart
 				z = pages.content.cart.cart
-				animation = false ;
+				
 
 			break;
 			case 9:
 				off = pages.content.pegistration
 				z = pages.content.pegistration.pegistration
-				animation = false ;
+				
 			break;
 		}
 				document.getElementById('h1').innerHTML=off.h1;
@@ -571,7 +580,7 @@
 				if(animation){
 
 					document.getElementById('moveCenter').style.transform = 'rotateY(5deg)'
-					
+
 
 					setTimeout(function(){
 						document.getElementById('moveCenter').style.transform = 'rotateY(0deg)'

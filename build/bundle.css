@@ -82,6 +82,7 @@ ul,li,a{
 } 
 
 .comentsViev{
+	padding: 12px;
 	position: relative;
 	width:100%;
 	min-width:230px;
@@ -91,9 +92,65 @@ ul,li,a{
 	box-shadow: 0px 0px 10px -2px grey;
 	margin:5px;
 }
-#coments{
+#p{
+	transition: 0.4s all ease-in-out;
+	width:730px;
 	
 }
+#h1{
+	position: absolute;
+	transition: 0.4s all ease-in-out;
+	top: 0px;
+
+}
+
+#products{
+	transition: 0.4s all ease-in-out;
+	width:730px;
+	
+
+}
+#product{
+	transition: 0.4s all ease-in-out;
+	width:730px;
+	
+
+}
+#cart{
+	transition: 0.4s all ease-in-out;
+	width:730px;
+	
+
+}
+#contact{
+	transition: 0.4s all ease-in-out;
+	width:730px;
+	
+
+}
+#registration{
+	transition: 0.4s all ease-in-out;
+	width:730px;
+	
+
+}
+.center{
+	transition: 0.8s all ease-in-out;
+	position: relative;
+	width:729px;
+	max-width:730px;
+	height:1200px;
+	overflow: hidden;
+	perspective:1000px;
+}
+.moveCenter{
+	transition: 0.8s all ease-in-out;
+	position: absolute;
+	top: 50px;
+	left:0px;	
+	display: flex;
+}
+
 .comentsViev::after{
 	content:"";
 	height:0px;
@@ -113,6 +170,9 @@ ul,li,a{
 	text-align: left;
 }
 
-td{
+#product td{
 	padding: 20px;
+}
+.formTd{
+	vertical-align: top;
 }
